@@ -52,6 +52,7 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
 
   @override
   void initState() {
+    print('CURVED NAVIGATION init state');
     super.initState();
     _icon = widget.items[widget.index];
     _length = widget.items.length;
@@ -74,8 +75,10 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
 
   @override
   void didUpdateWidget(CurvedNavigationBar oldWidget) {
+    print('CURVED NAVIGATION init state');
     super.didUpdateWidget(oldWidget);
     if (oldWidget.index != widget.index) {
+      print('CURVED NAVIGATION execute animation');
       final newPosition = widget.index / _length;
       _startingPos = _pos;
       _endingIndex = widget.index;
@@ -92,7 +95,9 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
 
   @override
   Widget build(BuildContext context) {
+    print('CURVED NAVIGATION build');
     Size size = MediaQuery.of(context).size;
+    print(_icon);
     return Container(
       color: widget.backgroundColor,
       height: widget.height,
